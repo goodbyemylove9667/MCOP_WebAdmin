@@ -1,0 +1,60 @@
+.main
+{
+    background-image: url('../img/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn
+{
+    border-radius: 8px;
+    background: #0000FF;
+    font-weight: bolder;
+}
+.btn:hover
+{
+    border-radius: 8px;
+    background: #9900CC;
+    font-weight: bolder;
+}
+.card
+{
+    background: none;
+    border: none;
+}
+.input-group
+{
+    padding-top: 5px;
+    padding-bottom:5px;
+    border-radius: 30px;
+    border: solid white 2px;
+}
+.input-group-text
+{
+    background: none;
+    border: none;
+    color: white;
+}
+.form-control
+{
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+  .hidden-pass
+  {
+      opacity: 0.5;
+  }
