@@ -103,32 +103,54 @@
                   </div>
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label text-dark h3">EMAIL</label>
-                    <input name="Email" #Email1="ngModel" [(ngModel)]="service.formData.Email"  pattern="^[0-9]*$"  required class="form-control col-sm-9" 
+                    <input name="Email" #Email1="ngModel" [(ngModel)]="service.formData.Email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"   required class="form-control col-sm-9" 
                     [ngClass]="{ 'is-invalid':(Email1.errors && Email1.touched),'is-valid': !Email1.errors && Email1.touched}"
                     >
                     <span class="text-danger offset-sm-3" *ngIf="Email1.invalid && Email1.dirty">
-                      Sai lỗi định dạng
+                      Phải có dạng email e.g a@gmail.com
                     </span>
                   </div>
                   <div class="form-group row">
                     <label  class="col-sm-3 col-form-label text-dark h3">MẬT KHẨU</label>
-                    <input name="Password" #Password1="ngModel" [(ngModel)]="service.formData.Password"   required class="form-control col-sm-9">
+                    <input name="Password" #Password1="ngModel" [(ngModel)]="service.formData.Password" pattern="[a-z0-9]{3,15}"  required class="form-control col-sm-9"
+                    [ngClass]="{ 'is-invalid':(Password1.errors && Password1.touched),'is-valid': !Password1.errors && Password1.touched}"
+
+                    >
+                    <span class="text-danger offset-sm-3" *ngIf="Password1.invalid && Password1.dirty">
+                      Mật khẩu bao gồm chữ và số, từ 3-15 kí tự
+                    </span>
                   </div>
                   <div class="form-group row">
                     <label  class="col-sm-3 col-form-label text-dark h3">HỌ</label>
-                    <input name="Lastname" #Lastname1="ngModel" [(ngModel)]="service.formData.Lastname"  required class="form-control col-sm-9">
+                    <input name="Lastname" #Lastname1="ngModel" [(ngModel)]="service.formData.Lastname" pattern="[a-zA-Z]" required class="form-control col-sm-9"
+                    [ngClass]="{ 'is-invalid':(Lastname1.errors && Lastname1.touched),'is-valid': !Lastname1.errors && Lastname1.touched}">
+                    <span class="text-danger offset-sm-3" *ngIf="Lastname1.invalid && Lastname1.dirty">
+                      Họ chỉ bao gồm chữ
+                    </span>
+                    
                   </div>
                   <div class="form-group row">
                     <label  class="col-sm-3 col-form-label text-dark h3">TÊN</label>
-                    <input name="Firstname" #Firstname1="ngModel" [(ngModel)]="service.formData.Firstname"  required class="form-control col-sm-9">
+                    <input name="Firstname" #Firstname1="ngModel" [(ngModel)]="service.formData.Firstname" pattern="[a-zA-Z ]+$" required class="form-control col-sm-9"
+                    [ngClass]="{ 'is-invalid':(Firstname1.errors && Firstname1.touched),'is-valid': !Firstname1.errors && Firstname1.touched}">
+                    <span class="text-danger offset-sm-3" *ngIf="Firstname1.invalid && Firstname1.dirty">
+                      Tên chỉ bao gồm chữ
+                    </span>
                   </div>
                   <div class="form-group row">
                     <label  class="col-sm-3 col-form-label text-dark h3">SĐT</label>
-                    <input name="Phone" #Phone1="ngModel" [(ngModel)]="service.formData.Phone"  required class="form-control col-sm-9">
+                    <input name="Phone" #Phone1="ngModel" [(ngModel)]="service.formData.Phone"  pattern="[0-9]{10}" required class="form-control col-sm-9"
+                    [ngClass]="{ 'is-invalid':(Phone1.errors && Phone1.touched),'is-valid': !Phone1.errors && Phone1.touched}">
+                    <span class="text-danger offset-sm-3" *ngIf="Phone1.invalid && Phone1.dirty">
+                      SDT chỉ bao gồm số và có 10 số
+                    </span>
                   </div>
                   <div class="form-group row">
                     <label  class="col-sm-3 col-form-label text-dark h3">ĐỊA CHỈ</label>
-                    <textarea rows="2" name="Address" #Address1="ngModel" [(ngModel)]="service.formData.Address"  required class="form-control col-sm-9"></textarea>
+                    <textarea rows="2" name="Address" #Address1="ngModel" [(ngModel)]="service.formData.Address" pattern="[a-zA-Z ]+$" required class="form-control col-sm-9"
+                      [ngClass]="{ 'is-invalid':(Address1.errors && Address1.touched),'is-valid': !Address1.errors && Address1.touched}">
+
+                    </textarea>
                   </div>
                   <div class="form-group row">
                     <label  class="col-sm-3 col-form-label text-dark h3">NGÀY SINH</label>
